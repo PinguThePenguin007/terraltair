@@ -1,0 +1,143 @@
+
+TTbyte - a value from 0 to 999, fits into 9 bits, but doesn't in 10
+
+----------------------------------------------
+----------------- THE LAYOUT -----------------
+----------------------------------------------
+
+-*-* MEMORY *-*-
+
+the cpu has 7+1 registers in total
+register 011 is the TTbyte located at M address of RAM
+
+A   B   M   RAM X   Y   S   J
+000 001 010 011 100 101 110 111
+
+any may be used for mathematical, transfer or I/O operations
+
+J defines the JMP location
+
+-*-* ALU and JMP *-*-
+
+-* ALU *-
+
+the answer is always stored in location A
+
+0000 - add           A + B
+0001 - sub           A - B
+
+0010 - left shift    A << B
+0011 - right shift   A >> B
+
+0100 - multiply      A * B
+0101 - divide        A / B
+
+0110 - get remainder A // B
+0111 - get ALU flags
+
+1000 - bitwise not   !A
+1001 - bitwise and   A & B
+
+1010 - bitwise or    A | B
+1011 - bitwise xor   A ^ B
+
+
+1100, 1101, 1110 - unused
+
+1111 - unused (should never be used to prevent TTbyte overflows)
+
+-* ALU FLAGS *-
+
+"C" - carry
+"Z" - equal to zero
+"E" - even number
+"N" - actual result is negative
+
+000000CZEN
+
+-* JMP *-
+
+00 - no jump
+01 - jump if equal to 0
+10 - jump if not equal to 0
+11 - unconditional jump
+
+-*-* LAYOUT AND MODES OF OPERATION *-*-
+
+"x" - useless bits
+
+"M" - mode select
+
+MM????????
+??????????
+
+
+"00" - data mode
+
+"A" - location A
+"B" - location B
+
+if V = 0, transfer A <- B
+
+"V" - load immediate value in A
+"v" - value
+
+00AAABBBxV
+vvvvvvvvvv
+
+
+"01" - ALU / JMP mode
+
+"A" - location A
+"B" - location B
+
+"o" - operation
+
+"J" - jump conditions
+
+when jumping, the calculation result is not applied to the target register
+
+"V" - use a small direct value vvvvv
+
+BBB is ignored if V = 1
+
+01AAABBBJJ
+ooooVvvvvv
+
+if JJ = 11:
+
+"D" - whether to direct jump or jump to M
+"d" - direct jump address
+
+01xxxxxD11
+dddddddddd
+
+
+"10" - I/O mode
+
+"L" - location
+
+"W" - whether to read/write (0/1) to the address
+"a" - I/O address
+"V" - write a value vvvvvvvv directly
+"T" - throw away the value if reading
+
+it's not useful to set both V and T to 1, as one will always be irrelevant. this helps avoid the TTbyte overflow
+
+"C" - pass clock state
+
+10LLLWCaaa
+TVvvvvvvvv
+
+
+"11" - cpu control
+
+"H" - halt operation
+
+[INCOMPLETE]
+"R" - reset cpu
+
+does no operation if no op bits are set
+
+11xxxxxxxH
+000000000R

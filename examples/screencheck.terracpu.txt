@@ -1,0 +1,42 @@
+-- load display data
+DATA a value 0b0011111111
+DATA m value 8
+DATA j value $load
+
+:load
+
+ALU m;
+sub value 1
+
+DATA ram a
+
+ALU a;
+rsh value 1
+
+
+ALU m JNZ;
+sub value
+
+-- show data on display
+DATA a value 0
+DATA b value 0
+DATA j value $display
+
+:display
+IO a write clock 7
+IO ram write clock 7
+
+ALU m;
+add value 1
+
+ALU m JNZ;
+sub value 8
+
+ALU a;
+add value 1
+DATA m value 0
+
+ALU a JNZ;
+sub value 18
+
+CPU HALT

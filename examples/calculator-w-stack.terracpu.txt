@@ -1,0 +1,51 @@
+:D1addr = red
+:D2addr = blue
+:D3addr = green
+:I1addr = yellow
+
+DATA push stack value $get_x
+ALU direct JMP $input_function
+:get_x
+
+DATA x pop stack
+IO x write clock $D1addr
+
+DATA push stack value $get_y
+ALU direct JMP $input_function
+:get_y
+
+DATA y pop stack
+IO y write clock $D2addr
+
+
+ALU x y add
+IO x write clock $D3addr
+
+DATA push stack value $reset
+ALU direct JMP $input_function
+:reset
+
+CPU RESET
+
+
+
+:input_function
+
+	DATA j value $f_loop
+	:f_loop
+		IO write clock $I1addr;
+		direct 1
+
+		IO a read clock $I1addr
+
+		IO write clock $I1addr;
+		direct 0
+
+		ALU a JZ add value 0
+
+	DATA j pop stack
+
+	IO a read clock $I1addr
+	DATA a push stack
+
+	ALU JMP add value 0

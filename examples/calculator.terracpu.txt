@@ -1,0 +1,52 @@
+:D1addr = red
+:D2addr = blue
+:D3addr = green
+:I1addr = yellow
+
+:f_return = b
+
+DATA j value $get_x
+ALU direct JMP $input_function
+:get_x
+
+DATA x $f_return
+IO x write clock $D1addr
+
+
+DATA j value $get_y
+ALU direct JMP $input_function
+:get_y
+
+DATA y $f_return
+IO y write clock $D2addr
+
+
+ALU x y add
+IO x write clock $D3addr
+
+
+DATA j value $reset
+ALU direct JMP $input_function
+:reset
+
+CPU RESET
+
+
+
+:input_function
+	DATA s j
+	DATA j value $f_loop
+	:f_loop
+		IO write clock $I1addr;
+		direct 1
+
+		IO $f_return read $I1addr
+
+		IO write clock $I1addr;
+		direct 0
+
+		ALU $f_return JZ add value 0
+
+	IO $f_return read $I1addr
+	DATA j s
+	ALU JMP add value 0

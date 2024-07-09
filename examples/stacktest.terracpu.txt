@@ -1,0 +1,15 @@
+DATA ram stack value 1
+DATA b value 2
+DATA m value 3
+DATA x value 4
+
+DATA ram b stack
+DATA ram m stack
+DATA ram x stack
+
+DATA a ram stack
+DATA b ram stack
+DATA m ram stack
+DATA x ram stack
+
+CPU HALT
