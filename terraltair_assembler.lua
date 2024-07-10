@@ -105,7 +105,7 @@ local debug=0
 local mode="x"
 local nofile=false
 local infile
-local outfile="out.hex"
+local outfile
 
 for i=1,#arg do
 
@@ -130,6 +130,8 @@ for i=1,#arg do
 		else outfile=arg[i] end
 	end
 end
+
+outfile=outfile or ((mode=="x" and "out.hex") or "out.txt")
 
 assert(
 	io.input(infile)
