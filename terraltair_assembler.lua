@@ -87,7 +87,10 @@ options:
 -x    --hex      format output in hexadecimal and add a special header for usage in circuit simulators like Logisim
 -g    --game     format output in decimal 000-999 format to rewrite into a ROM in TT
 
-documentation: TODO]]
+the script will use out.hex/out.txt as an outfile if not provided with one
+
+useful things: https://github.com/PinguThePenguin007/terraltair]]
+
 
 -- https://stackoverflow.com/a/9080080
 function ToBits(num,bits)
