@@ -1,4 +1,4 @@
-# terraltair
+# TerrAltair
 A virtual CPU made in [TerraTech](https://store.steampowered.com/app/285920/TerraTech)
 
 ##### Table of Contents:
