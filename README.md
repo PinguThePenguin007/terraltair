@@ -4,6 +4,7 @@ A virtual CPU made in [TerraTech](https://store.steampowered.com/app/285920/Terr
 ##### Table of Contents:
 - [Capabilities](#capabilities)
 - [Snapshots](#snapshots)
+- [Circuit](#circuit)
 - [Documentation](#documentation)
 - [Assembler](#assembler)
   - [How to run it](#how-to-run-it)
@@ -19,6 +20,9 @@ I will distribute the snapshots using Steam Workshop for now:
 * [TBA] The main CPU snapshot
 - [TBA] My own CPU programs
 - [TBA] My miscellaneous I/O modules
+## Circuit
+A circuit file for [Logisim Evolution](https://github.com/logisim-evolution/logisim-evolution) is available:
+- [The cicruit](https://github.com/PinguThePenguin007/terraltair/blob/main/TerrAltair.circ)
 ## Documentation
 The assembler documentation will be in GitHub wiki for now:
 * [The GitHub wiki](https://github.com/PinguThePenguin007/terraltair/wiki)
