@@ -1,4 +1,6 @@
 
+----- USEFUL TERMS -----
+
 TTbyte - a value from 0 to 999, fits into 9 bits, but doesn't in 10
 
 ----------------------------------------------
@@ -16,6 +18,9 @@ A   B   M   RAM X   Y   S   J
 any may be used for mathematical, transfer or I/O operations
 
 J defines the JMP location
+S is used as the stack pointer for the cpu's stack instructions
+
+(locations A and B are not the same thing as registers A and B!)
 
 -*-* ALU and JMP *-*-
 
@@ -35,11 +40,11 @@ the answer is always stored in location A
 0110 - get remainder A // B
 0111 - get ALU flags
 
-1000 - bitwise not   !A
-1001 - bitwise and   A & B
+[incomplete] 1000 - bitwise not   !A
+[incomplete] 1001 - bitwise and   A & B
 
-1010 - bitwise or    A | B
-1011 - bitwise xor   A ^ B
+[incomplete] 1010 - bitwise or    A | B
+[incomplete] 1011 - bitwise xor   A ^ B
 
 
 1100, 1101, 1110 - unused
@@ -47,6 +52,7 @@ the answer is always stored in location A
 1111 - unused (should never be used to prevent TTbyte overflows)
 
 -* ALU FLAGS *-
+[incomplete]
 
 "C" - carry
 "Z" - equal to zero
@@ -82,7 +88,15 @@ if V = 0, transfer A <- B
 "V" - load immediate value in A
 "v" - value
 
-00AAABBBxV
+"S" - enable stack manipulation
+one of the locations must be 011 (RAM) for it to work properly
+
+if location A is RAM, PUSH location B onto the stack
+if location B is RAM, POP the stack into location A
+
+if location A is RAM and V = 1, PUSH an immediate value onto the stack
+
+00AAABBBSV
 vvvvvvvvvv
 
 
@@ -134,10 +148,9 @@ TVvvvvvvvv
 
 "H" - halt operation
 
-[INCOMPLETE]
 "R" - reset cpu
 
-does no operation if no op bits are set
+does NOP (no operation) if no op bits are set
 
-11xxxxxxxH
-000000000R
+11xxxxxxRH
+xxxxxxxxxx
