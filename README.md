@@ -13,21 +13,27 @@ A virtual CPU made in [TerraTech](https://store.steampowered.com/app/285920/Terr
     - [MacOS](#macos)
 - [Contact me](#contact-me)
 ## Capabilities
-TODO
+- 7 registers, of which 4 general purpose ones
+- Expandable RAM and ROM
+- Single-cycle state of the art stack push/pop operaion
+- Powerful I/O module with support up to 8 devices
+- Max speed of 2.5 cycles per second (omg so fast)
+- Add, subtract, multiply, divide operations and more
+- Reset and halt operations
 ## Snapshots
 I will distribute the snapshots using Steam Workshop for now:
 
 * [TBA] The main CPU snapshot
-- [TBA] My own CPU programs
+- [TBA] My CPU programs
 - [TBA] My miscellaneous I/O modules
 ## Circuit
 A circuit file for [Logisim Evolution](https://github.com/logisim-evolution/logisim-evolution) is available:
-- [The cicruit](https://github.com/PinguThePenguin007/terraltair/blob/main/TerrAltair.circ)
+- [The circuit](https://github.com/PinguThePenguin007/terraltair/blob/main/TerrAltair.circ)
 ## Documentation
 The assembler documentation will be in GitHub wiki for now:
 * [The GitHub wiki](https://github.com/PinguThePenguin007/terraltair/wiki)
 
-* [The layout](https://github.com/PinguThePenguin007/terraltair/blob/main/TerrAltair%20instruction%20layout.txt)
+* [The instruction layout](https://github.com/PinguThePenguin007/terraltair/blob/main/TerrAltair%20instruction%20layout.txt)
 
 ## Assembler
 [The script](https://github.com/PinguThePenguin007/terraltair/blob/main/terraltair_assembler.lua) can be found inside the repository alongside with example code snippets
@@ -76,6 +82,6 @@ Dunno. Anyone up to be a tester for me? :P
 ## Contact me
 Use Matrix or Discord to ask me any questions about the CPU:
 - My matrix:  @pinguthecatgirl:catgirl.cloud
-- My discord: TBA
+- My discord: @pinguthepenguin_007
 
 For bugs, suggestions or other issues please use [GitHub Issues](https://github.com/PinguThePenguin007/terraltair/issues) :)
