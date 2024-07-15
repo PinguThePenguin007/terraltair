@@ -64,9 +64,9 @@ the answer is always stored in location A
 -* JMP *-
 
 00 - no jump
-01 - jump if equal to 0
-10 - jump if not equal to 0
-11 - unconditional jump
+01 - jump if equal to 0 (JZ)
+10 - jump if not equal to 0 (JNZ)
+11 - unconditional jump (JMP)
 
 -*-* LAYOUT AND MODES OF OPERATION *-*-
 
