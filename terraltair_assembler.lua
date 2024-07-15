@@ -29,7 +29,7 @@ local empty={"0"}
 
 Modes={
 	DATA={code="00",dict=Dictionary.DATA,},
-	ALU= {code="01",dict=Dictionary.ALU ,},
+	ALU= {code="01",dict=Dictionary.ALU ,noorderchange=true},
 	IO=  {code="10",dict=Dictionary.IO  ,noorderchange=true,multinumber=true},
 	CPU= {code="11",dict=Dictionary.CPU ,}
 }
