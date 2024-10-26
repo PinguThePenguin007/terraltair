@@ -1,7 +1,7 @@
 
 ----- USEFUL TERMS -----
 
-TTbyte - a value from 0 to 999, fits into 9 bits, but doesn't in 10
+TTbyte - a value from 0 to 999, which is less than the max 10 bit value (1024)
 
 ----------------------------------------------
 ----------------- THE LAYOUT -----------------
