@@ -17,7 +17,7 @@ A virtual CPU made in [TerraTech](https://store.steampowered.com/app/285920/Terr
 - Expandable RAM and ROM
 - Single-cycle state of the art stack push/pop operaion
 - Powerful I/O module with support up to 8 devices
-- Max speed of 2.5 cycles per second (omg so fast)
+- Max speed of 3.5 cycles per second (omg so fast)
 - Add, subtract, multiply, divide operations and more
 - Reset and halt operations
 ## Snapshots
