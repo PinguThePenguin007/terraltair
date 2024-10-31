@@ -8,8 +8,12 @@ Dictionary={
 	ALU ={
 		JZ={"01"},JNZ={"10"}, JMP={"11"},DIRECT={"1",2},
 		VALUE={"1",5,true},
-		ADD={"0000",6,true}, SUB={"0001",6,true},
-		LSH={"0010",6,true}, RSH={"0011",6,true},
+		ADD={"0000",6,true}, SUB=  {"0001",6,true},
+		LSH={"0010",6,true}, RSH=  {"0011",6,true},
+		MUL={"0100",6,true}, DIV=  {"0101",6,true},
+		MOD={"0110",6,true}, FLAGS={"0111",6,true},
+		NOT={"1000",6,true}, AND=  {"1001",6,true},
+		OR= {"1010",6,true}, XOR=  {"1011",6,true},
 	},
 	IO  ={
 		WRITE={"1",4}, READ={"0",4},CLOCK={"1",3},
@@ -60,6 +64,13 @@ shortcut["+"]=shortcut.ADD
 shortcut["-"]=shortcut.SUB
 shortcut["<<"]=shortcut.LSH
 shortcut[">>"]=shortcut.RSH
+shortcut["*"]=shortcut.MUL
+shortcut["/"]=shortcut.DIV
+shortcut["%"]=shortcut.MOD
+shortcut["!"]=shortcut.NOT
+shortcut["&"]=shortcut.AND
+shortcut["|"]=shortcut.OR
+shortcut["^"]=shortcut.XOR
 shortcut.V=shortcut.VALUE
 
 shortcut=Dictionary.IO
