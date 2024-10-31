@@ -37,7 +37,7 @@ the answer is always stored in location A
 0100 - multiply      A * B
 0101 - divide        A / B
 
-0110 - get remainder A // B
+0110 - get remainder A % B
 0111 - get ALU flags
 
 [incomplete] 1000 - bitwise not   !A
