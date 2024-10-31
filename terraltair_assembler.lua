@@ -85,9 +85,9 @@ options:
 
 -b    --binary   format output in binary (useful for debug)
 -x    --hex      format output in hexadecimal and add a special header for usage in circuit simulators like Logisim
--g    --game     format output in decimal 000-999 format to rewrite into a ROM in TT
+-g    --game     format output in decimal 000-999 format for rewriting onto a ROM in TT
 
-the script will use out.hex/out.txt as an outfile if not provided with one
+the script will use out.hex / out.txt as an outfile if not provided with one
 
 useful things: https://github.com/PinguThePenguin007/terraltair]]
 
