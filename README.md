@@ -36,7 +36,9 @@ The assembler documentation will be in GitHub wiki for now:
 * [The instruction layout](https://github.com/PinguThePenguin007/terraltair/blob/main/TerrAltair%20instruction%20layout.txt)
 
 ## Assembler
-[The script](https://github.com/PinguThePenguin007/terraltair/blob/main/terraltair_assembler.lua) can be found inside the repository alongside with example code snippets
+
+Download the archive from the [releases tab](https://github.com/PinguThePenguin007/terraltair/releases) according to your operating system and unpack it.
+
 ### How to run it
 #### Linux
 Install Lua using your distribution's package manager:
@@ -54,14 +56,8 @@ sudo pacman -S lua
 ```
 --- 
 <a name="linux-and-macos-instructions"></a>
-Download [the script](https://github.com/PinguThePenguin007/terraltair/blob/main/terraltair_assembler.lua)
 
-Or clone the whole repository (you'll need Git for this):
-```
-git clone https://github.com/PinguThePenguin007/terraltair.git
-cd terraltair
-```
-You may need to give the script execution permissions, too:
+First, you may need to give the script execution permissions:
 ```
 chmod +111 terraltair_assembler.lua
 ```
@@ -91,6 +87,7 @@ Open your terminal app and run:
 brew update
 brew install lua
 ```
+
 Follow [those](#linux-and-macos-instructions) instructions next. 
 
 
