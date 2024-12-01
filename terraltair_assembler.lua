@@ -86,7 +86,7 @@ shortcut=nil
 OrderReversors={[">"]=true,["PUSH"]=true}
 
 
-HelpMessage=[[usage: ttcpu_assembler.lua [source] [options] [outfile]
+HelpMessage=[[usage: lua ttcpu_assembler.lua [source] [options] [outfile]
 options:
 
 -h    --help     print this help message
