@@ -86,13 +86,13 @@ shortcut=nil
 OrderReversors={[">"]=true,["PUSH"]=true}
 
 
-HelpMessage=[[usage: ttcpu_assembler.lua [source] [outfile] [options]
+HelpMessage=[[usage: ttcpu_assembler.lua [source] [options] [outfile]
 options:
 
 -h    --help     print this help message
 -d    --debug    give additional information on the process (use -dd for even more information)
 
--p    --print    output to stdout instead of the outfile
+-f    --file     output into outfile instead of printing
 
 -b    --binary   format output in binary (useful for debug)
 -x    --hex      format output in hexadecimal and add a special header for usage in circuit simulators like Logisim
@@ -117,7 +117,7 @@ end
 
 local debug=0
 local mode="x"
-local nofile=false
+local tofile=false
 local infile
 local outfile
 
@@ -126,8 +126,8 @@ for i=1,#arg do
 	if arg[i]=="-h" or arg[i]=="--help" then
 		print(HelpMessage); os.exit()
 
-	elseif arg[i]=="-p" or arg[i]=="--print" then
-		nofile=true
+	elseif arg[i]=="-f" or arg[i]=="--file" then
+		tofile=true
 
 	elseif arg[i]=="-b" or arg[i]=="--binary" then
 		mode="b"
@@ -150,7 +150,7 @@ outfile=outfile or ((mode=="x" and "out.hex") or "out.txt")
 assert(
 	io.input(infile)
 )
-if not nofile then
+if tofile then
 	io.output(outfile)
 	if mode=="x" and debug<1 then io.write("v2.0 raw\n") end
 end
