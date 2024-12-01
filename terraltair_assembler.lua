@@ -119,7 +119,7 @@ function ToBits(num,bits)
 end
 
 local debug=0
-local mode="x"
+local mode="g"
 local tofile=false
 local infile
 local outfile
