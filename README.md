@@ -76,7 +76,7 @@ Or:
 
 #### Windows
 
-Run one of the .bat scripts included in the [release]. The script names should be self-explanatory 😉
+Run one of the .bat scripts included in the [release](https://github.com/PinguThePenguin007/terraltair/releases). The script names should be self-explanatory 😉
 
 If you want to "build" the release yourself, you'll need to download [the latest Lua binary](https://luabinaries.sourceforge.net/download.html) and put it in the same directory as the assembler and the scripts.
 
