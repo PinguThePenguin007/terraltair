@@ -52,7 +52,8 @@ sudo dnf install lua
 ```
 sudo pacman -S lua
 ```
----
+--- 
+<a name="linux-and-macos-instructions"></a>
 Download [the script](https://github.com/PinguThePenguin007/terraltair/blob/main/terraltair_assembler.lua)
 
 Or clone the whole repository (you'll need Git for this):
@@ -66,18 +67,32 @@ chmod +111 terraltair_assembler.lua
 ```
 Run the script:
 ```
+lua terraltair_assembler.lua --help
+```
+Or:
+```
 ./terraltair_assembler.lua --help
 ```
 
 #### Windows
-Exact instructions TODO
 
-You can try downloading [the latest Lua binary](https://luabinaries.sourceforge.net/download.html) and running something like this:
-```
-Lua.exe terraltair_assembler.lua --help
-```
+Run one of the .bat scripts included in the [release]. The script names should be self-explanatory 😉
+
+If you want to "build" the release yourself, you'll need to download [the latest Lua binary](https://luabinaries.sourceforge.net/download.html) and put it in the same directory as the assembler and the scripts.
+
 #### MacOS
-Dunno. Anyone up to be a tester for me? :P
+(Exact instructions TODO, need a Mac tester. Please reach out if you want to help)
+
+I think you'll need brew if you don't want to compile Lua from source. Instructions are [here](https://brew.sh/)
+
+Open your terminal app and run:
+
+```
+brew update
+brew install lua
+```
+Follow [those](#linux-and-macos-instructions) instructions next. 
+
 
 ## Contact me
 Use Matrix or Discord to ask me any questions about the CPU:
