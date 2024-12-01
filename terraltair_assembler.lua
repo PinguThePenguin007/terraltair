@@ -90,15 +90,18 @@ HelpMessage=[[usage: ttcpu_assembler.lua [source] [options] [outfile]
 options:
 
 -h    --help     print this help message
--d    --debug    give additional information on the process (use -dd for even more information)
+-d    --debug    give additional information on the process
+                 (use -dd for even more information)
 
 -f    --file     output into outfile instead of printing
+                 the script will use out.hex / out.txt as an outfile
+                 if not provided with one
 
 -b    --binary   format output in binary (useful for debug)
--x    --hex      format output in hexadecimal and add a special header for usage in circuit simulators like Logisim
--g    --game     format output in decimal 000-999 format for rewriting onto a ROM in TT
-
-the script will use out.hex / out.txt as an outfile if not provided with one
+-x    --hex      format output in hexadecimal and add a special header
+                 for usage in circuit simulators like Logisim
+-g    --game     format output in decimal 000-999 format
+                 for rewriting onto a ROM in TT
 
 useful things: https://github.com/PinguThePenguin007/terraltair]]
 
