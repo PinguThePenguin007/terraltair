@@ -150,11 +150,18 @@ end
 
 outfile=outfile or ((mode=="x" and "out.hex") or "out.txt")
 
-assert(
-	io.input(infile)
-)
+if not infile then
+	io.write("Enter input file name: ")
+	infile = io.read()
+end
+
+	assert(
+	 io.input(infile)
+	)
 if tofile then
-	io.output(outfile)
+	assert(
+	 io.output(outfile)
+	)
 	if mode=="x" and debug<1 then io.write("v2.0 raw\n") end
 end
 
